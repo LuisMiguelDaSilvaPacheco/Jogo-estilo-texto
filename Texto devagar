@@ -1,0 +1,21 @@
+programa
+{
+	inclua biblioteca Util --> u
+	inclua biblioteca Texto
+ --> t
+	
+	funcao inicio()
+	{
+		escrevaMaquina("texto de teste", 50)
+	}
+
+	funcao escrevaMaquina(cadeia texto, inteiro velocidade){
+
+		para(inteiro i=0; i < t.numero_caracteres(texto); i++){
+
+			escreva(t.obter_caracter(texto, i))
+			u.aguarde(velocidade)
+		}
+	}
+
+}

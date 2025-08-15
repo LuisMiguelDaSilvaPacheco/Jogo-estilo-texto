@@ -1,0 +1,61 @@
+programa
+{
+	
+	funcao inicio()
+	{
+		cadeia convidados[100]
+		cadeia nome
+		logico continuar = verdadeiro
+		inteiro opcao, remover
+		inteiro lugar_convidado = 0
+		
+		enquanto(continuar){
+			escreva("****************\n")
+			escreva("* 1) Cadastrar *\n")
+			escreva("* 2) Listar    *\n")
+			escreva("* 3) Remover   *\n")
+			escreva("* 4) Sair      *\n")
+			escreva("****************\n")
+			leia(opcao)
+
+			escolha(opcao){
+				caso 1:
+					escreva("Informe o nome do convidado \n")
+					leia(nome)
+
+					convidados[lugar_convidado] = nome
+					lugar_convidado++
+				pare
+
+				caso 2:
+					para(inteiro i=0; i < lugar_convidado; i++){
+						escreva(i+1, "º convidado: ", convidados[i], "\n")
+				}
+
+				pare
+
+				caso 3:
+					para(inteiro i=0; i < lugar_convidado; i++){
+						escreva(i+1, "º convidado: ", convidados[i], "\n")
+				}
+				
+					escreva("Escolha a posição de quem você deseja remover \n")
+					leia(remover)
+
+					convidados[remover - 1] = convidados[lugar_convidado - 1]
+					lugar_convidado--
+				pare
+
+				caso 4:
+					escreva("Saindo...")
+					continuar = falso
+				pare
+				
+				caso contrario:
+					escreva("Resposta inválida, tente novamente \n")
+				pare
+				
+			}
+		}
+	}
+}

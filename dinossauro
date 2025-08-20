@@ -1,0 +1,182 @@
+programa
+{
+	inclua biblioteca Util
+	inclua biblioteca Calendario
+
+	funcao inicio()
+	{Introducao()
+
+      
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	}
+	funcao Introducao (){
+		inteiro BoaPessoa
+		inteiro Gira
+		
+		escreva("Bem-vindo(a) jovem")
+      AgurdLimpe(3200)
+     escreva("Essa história é sobre um jovem chamado Lucas")
+	AgurdLimpe(4000)
+	escreva("Lembre: cada ação sua determina seu futuro.")
+	AgurdLimpe(4000)
+	escreva("Tudo começa em São Francisco, Califórnia. Uma cidade linda, mas cansativa para alguns.")
+	AgurdLimpe(5000)
+	escreva("Lucas é um técnico de TI. Sua vida parece um loop, todo dia tão repetitivo e sem graça.")
+	AgurdLimpe(5000)
+	escreva("Mas em um dia qualquer, quando está voltando para sua casa")
+	AgurdLimpe(4500)
+	escreva("Um desconhecido de capuz esbarra em Lucas, e depressa sai sem pedir desculpas")
+	AgurdLimpe(4900)
+	escreva("Olhando para o chão, ele percebe que o rapaz havia deixado seu relógio de bolso cair")
+	AgurdLimpe(4900)
+	escreva("Mas já era tarde para ir atras do homem, pois ele havia sumido")
+	AgurdLimpe(4600)
+	escreva("O relógio era encantador. Parecia ser muito antigo, uma relíquia desconhecida")
+	AgurdLimpe(4900)
+	escreva("Essa resposta não afetara o jogo, mas vôce tentaria de qualquer forma devolver o relógio?\n\n")
+	escreva("[1] Sim\n")
+	escreva("[2] Não\n\n")
+	Util.aguarde(5000)
+	leia(BoaPessoa)
+	limpa()
+	escreva("Esse relógio parecia estar estragado, pois seus ponteros não giravam.")
+	AgurdLimpe(4700)
+	escreva("Mas o que mais chamava atenção era a data que havia em sua lateral. ")
+	AgurdLimpe(4700)
+	escreva(Calendario.dia_mes_atual(),"/",Calendario.mes_atual(),"/",Calendario.ano_atual())
+	AgurdLimpe(3200)
+	escreva("Exatamente o dia de hoje")
+	AgurdLimpe(3200)
+	escreva("Como um objeto tão antigo podia ter a data em que iria ser perdido pelo seu dono?")
+	AgurdLimpe(4900)
+	escreva("Ele pensa em girar o ponteiro\n\n")
+	escreva("[1] Girar\n")
+	escreva("[2] Nem mexer\n\n")
+	leia(Gira)
+	limpa()
+	
+	se(Gira==1)
+	{escreva("Por mais que tentador Lucas decide girar o relógio")
+	AgurdLimpe(4600)}
+	se(Gira==2)
+	{escreva("\"Não faz sentido girar isto, é apenas um relógio quebrado\". É o que ele pensa")
+	AgurdLimpe(4900)
+	escreva("Mas atrás do relógio, em um canto estava escrito \"GIRE\"")
+	AgurdLimpe(4600)
+	escreva("Motivado, ele decide girar o ponteiro")
+	AgurdLimpe(3500)}
+	
+	escreva("E DERREPENTE")
+	AgurdLimpe(3000)
+	escreva(".")
+	Util.aguarde(1000)
+	escreva(".")
+	Util.aguarde(1000)
+	escreva(".")
+	AgurdLimpe(1000)
+	escreva("Nada acontece")
+	AgurdLimpe(3200)
+	escreva("Mas quando ele tenta girar ao contrario")
+	AgurdLimpe(3700)
+	escreva(".")
+	Util.aguarde(1000)
+	escreva(".")
+	Util.aguarde(1000)
+	escreva(".")
+	AgurdLimpe(3900)
+	escreva("TUDO O SEU REDOR HAVIA MUDADO")
+	AgurdLimpe(3500)
+	escreva("Sem casas, sem rua, sem humanos. Apenas a naturza")
+	AgurdLimpe(4600)
+	
+
+
+
+	
+	        escreva("                          --\n")
+        escreva("                        ::MMMM++++MMmm\n")
+        escreva("                    --@@::++++++mm++mmmm::\n")
+        escreva("                  ++++mm::@@++++::++++mm++MM--\n")
+        escreva("                  MM++++MMMMmm++++++++++mm##++\n")
+        escreva("                ::++++++++++++++++++mm++++::++--\n")
+        escreva("                @@::mm++@@++++++++++++++++++mm++\n")
+        escreva("              MM##++--..mmMM--++  mm##@@@@--  --\n")
+        escreva("              ++++MM++..--..##########@@\n")
+        escreva("              ++..++++mm----@@MM@@@@##\n")
+        escreva("              ++--++++++++##@@MMMMMM##\n")
+        escreva("              ++--MM++++++++MMMMmmmm##\n")
+        escreva("              ++----##++++::++##++mmmm##\n")
+        escreva("              ++..----++@@++::++####mmmm\n")
+        escreva("              ++..----..++@@##::++@@@@++\n")
+        escreva("              ++..------mmmm++MM++++++++\n")
+        escreva("              ++--------++++++++MM@@MM####\n")
+        escreva("            --++--------++++++++++++++++++++MM\n")
+        escreva("            ##++..----..++++++++++++++++++++++MM\n")
+        escreva("            ##mm----------++++++++++++++++++++++mm\n")
+        escreva("            ##++..--------++++++@@++++++++++++++++..\n")
+        escreva("            ++mm------------::++++mm++++++++++++++MM\n")
+        escreva("            ++++----------....MM++@@++++++++++++++++\n")
+        escreva("            ++--..--------..++++++++++++@@++++++++++++mm\n")
+        escreva("            ++++  --------MM++++..----++##++++++++++++++++\n")
+        escreva("          ..::mm  MM------@@++mm----..--##++++++++++++++++mm@@\n")
+        escreva("            --      ##----..mm++--------##++++++++++++++++++mm++MM\n")
+        escreva("                  ++mm++..------------..MM++++++++++mm++++++++mmmm++@@\n")
+        escreva("                  ++++----mm  ----------++++++++++++::++++++++++++++++++::##\n")
+        escreva("                  mm++--..--++++--------++@@++++++++++--..--++++++++++++++++++mm++\n")
+        escreva("                  ..++++++++++....----MM  ++++++::++MM++..--..::++++++++++++++++++mm\n")
+        escreva("                    mmmm++++++++            ++mm++++++MM::::--------..----++++++++++++::\n")
+        escreva("                      mm++++++::mmmm        --mm++++++--    ##mm++++++++++++++..--::::++\n")
+        escreva("                            --MM++@@        ++++mm++++mm                        ..mm::++++\n")
+        escreva("                          @@++++++            ##++++++mm                            ..++++\n")
+        escreva("                        mmmm++mm++              @@++++@@                              ++++\n")
+        escreva("                      ++++++++  ..                @@++++                              ++##\n")
+        escreva("                      @@##++++                      ##mm++                            ++\n")
+        escreva("                      MM##@@                        ..++++                            MM\n")
+        escreva("                      @@++@@                        ##++++\n")
+        escreva("                      ++mm--                        MM++++++\n")
+        escreva("                        mm                          ##::mmmm\n")
+        escreva("                                                    ++MM::++\n")
+        escreva("                                                  ++++@@++MMmm\n")
+        escreva("                                                  @@##MM--MMmm##\n")
+        escreva("                                                ++    --  --  ++++\n")
+
+	AgurdLimpe(5000)
+	escreva("\"MAS QUE MERDA É ESSA?!!!\"")
+	AgurdLimpe(3500)
+	escreva("Lucas precisa fazer alguma coisa")
+	
+	
+	
+	
+	
+	
+	}
+	
+	funcao AgurdLimpe (inteiro tempo)
+	{Util.aguarde(tempo)
+	limpa()}
+	
+}

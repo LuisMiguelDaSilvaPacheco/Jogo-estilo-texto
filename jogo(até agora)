@@ -1,0 +1,52 @@
+programa
+{
+	inclua biblioteca Texto --> t
+	inclua biblioteca Util
+ --> u
+	inteiro genero, velocidade
+	cadeia nome
+	
+	
+	funcao inicio()
+	{
+		criacao()
+		historia()
+	}
+
+	funcao criacao(){
+	
+		escrevaMaquina("Primeiramente, qual o seu gênero? \n", 50)
+		escrevaMaquina("1)Masculino		2)Feminino \n", 50)
+		leia(genero)
+		escrevaMaquina("Anotado! Qual o seu nome? \n", 50)
+		leia(nome)
+		escrevaMaquina("OK! E qual vai ser a velocidade do texto?(1000 = 1 segundo) \n", 50)
+		leia(velocidade)
+		escrevaMaquina("Perfeito! Pronto para a sua aventura como o melhor detetive do mundo? (não, você não é o Batman) \n", 50)
+		escrevaMaquina("3... \n2... \n1... \njá! \n", 250)
+		AguardeLimpe(500)
+	}
+
+	funcao historia(){
+		escrevaMaquina("A história de ", velocidade)
+		escrevaMaquina(nome, velocidade)
+		escrevaMaquina(" começa em seu aníversário ", velocidade)
+		AguardeLimpe(500)
+		
+	}
+	
+	funcao AguardeLimpe (inteiro tempo){
+		u.aguarde(tempo)
+		limpa()
+	}
+
+	funcao escrevaMaquina(cadeia texto, inteiro velocidade){
+
+		para(inteiro i=0; i < t.numero_caracteres(texto); i++){
+
+			escreva(t.obter_caracter(texto, i))
+			u.aguarde(velocidade)
+		}
+	}
+	
+}

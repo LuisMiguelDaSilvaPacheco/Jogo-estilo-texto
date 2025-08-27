@@ -1,29 +1,6 @@
 programa
 {
-	inclua biblioteca Texto --> t
-	inclua biblioteca Util
- --> u
-	inteiro genero, velocidade
-	cadeia nome
 	
-	
-	funcao inicio()
-	{
-		criacao()
-		historia()
-	}
-
-	funcao criacao(){
-	
-		escrevaMaquina("Primeiramente, qual o seu gênero? \n", 50)
-		escrevaMaquina("1)Masculino		2)Feminino \n", 50)
-		leia(genero)
-		escrevaMaquina("Anotado! Qual o seu nome? \n", 50)
-		leia(nome)
-		escrevaMaquina("OK! E qual vai ser a velocidade do texto?(1000 = 1 segundo) \n", 50)
-		leia(velocidade)
-		esprograma
-{
 	inclua biblioteca Texto --> t
 	inclua biblioteca Util--> u
 	
@@ -33,19 +10,14 @@ programa
 	
 	funcao inicio()
 	{
-		criacao()
+		criar()
 		historia()
 	}
 
-	funcao criacao(){
-	
-		escrevaMaquina("Primeiramente, qual o seu gênero? \n", 50)
-		escrevaMaquina("1)Masculino		2)Feminino \n", 50)
-		leia(genero)
-		escrevaMaquina("Anotado! Qual o seu nome? \n", 50)
+	funcao criar(){
+		escrevaMaquina("Você é um perito criminal cibernético de sucesso, antes de começar sua história, me responda uma pergunta\n", 50)
+		escrevaMaquina("Qual o seu nome? \n", 50)
 		leia(nome)
-		escrevaMaquina("OK! E qual vai ser a velocidade do texto?(1000 = 1 segundo) \n", 50)
-		leia(velocidade_escolhida)
 		escrevaMaquina("Perfeito! Pronto para a sua aventura como o melhor detetive do mundo? (não, você não é o Batman) \n", 50)
 		escrevaMaquina("3... \n2... \n1... \njá! \n", 250)
 		AguardeLimpe(500)
@@ -60,14 +32,14 @@ programa
 		escreva("░▒▓█▓▒░         ░▒▓█▓▒░   ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░         ░▒▓█▓▒░   ░▒▓█▓▒░     ░▒▓█▓▒░        ░▒▓█▓▒░   ░▒▓█▓▒░ ░▒▓█▓▓█▓▒░ ░▒▓█▓▒░         \n")
 		escreva("░▒▓█▓▒░░▒▓█▓▒░  ░▒▓█▓▒░   ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░         ░▒▓█▓▒░   ░▒▓█▓▒░     ░▒▓█▓▒░░▒▓█▓▒░ ░▒▓█▓▒░   ░▒▓█▓▒░ ░▒▓█▓▓█▓▒░ ░▒▓█▓▒░         \n")
 		escreva(" ░▒▓██████▓▒░   ░▒▓█▓▒░   ░▒▓███████▓▒░░▒▓████████▓▒░▒▓█▓▒░░▒▓█▓▒░      ░▒▓███████▓▒░░▒▓████████▓▒░  ░▒▓█▓▒░   ░▒▓████████▓▒░▒▓██████▓▒░  ░▒▓█▓▒░   ░▒▓█▓▒░  ░▒▓██▓▒░  ░▒▓████████▓▒░  \n")
-		AguardeLimpe(1000)
+		AguardeLimpe(3000)
 
-		escrevaMaquina("Era meu aniversário de 5 anos. Era um dia bom, ao menos era o que parecia, \n", velocidade_escolhida)
-		escrevaMaquina("mas eu ainda sentia que algo estava errado, e realmente estava. \n", velocidade_escolhida)
-		escrevaMaquina("A minha família parecia estar escondendo algo de mim, \n", velocidade_escolhida)
-		escrevaMaquina("não estavam me deixando entrar na cozinha, eu achei que era um bolo, mas quando eu entrei... \n", velocidade_escolhida)
-		escrevaMaquina("***VOCÊ ACORDA***\n", velocidade_escolhida)
-		escrevaMaquina("Mais uma vez esse pesadelo?  \n", velocidade_escolhida)
+		escrevaMaquina("Era meu aniversário de 5 anos. Era um dia bom, ao menos era o que parecia, \n", 50)
+		escrevaMaquina("mas eu ainda sentia que algo estava errado, e realmente estava. \n", 50)
+		escrevaMaquina("A minha família parecia estar escondendo algo de mim, \n", 50)
+		escrevaMaquina("não estavam me deixando entrar na cozinha, eu achei que era um bolo, mas quando eu entrei... \n\n", 50)
+		escrevaMaquina("***VOCÊ ACORDA***\n\n", 50)
+		escrevaMaquina("Mais uma vez esse pesadelo?  \n", 50)
 		AguardeLimpe(500)
 		
 	}

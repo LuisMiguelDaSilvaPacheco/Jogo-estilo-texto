@@ -4,7 +4,6 @@ programa
 	inclua biblioteca Texto --> t
 	inclua biblioteca Util--> u
 	
-	inteiro genero, velocidade_escolhida
 	cadeia nome
 	
 	
@@ -15,7 +14,8 @@ programa
 	}
 
 	funcao criar(){
-		escrevaMaquina("Você é um perito criminal cibernético de sucesso, antes de começar sua história, me responda uma pergunta\n", 50)
+		escrevaMaquina("Você é um perito criminal cibernético de sucesso.\n", 50)
+		escrevaMaquina("Antes de começar sua história, me responda uma pergunta\n", 50)
 		escrevaMaquina("Qual o seu nome? \n", 50)
 		leia(nome)
 		escrevaMaquina("Perfeito! Pronto para a sua aventura como o melhor detetive do mundo? (não, você não é o Batman) \n", 50)

@@ -41,6 +41,7 @@ programa
 		escrevaMaquina("***VOCÊ ACORDA***\n\n", 50)
 		escrevaMaquina("Mais uma vez esse pesadelo?  \n", 50)
 		AguardeLimpe(500)
+		escrevaMaquina("1- Ir ao trabalho		2- Explorar a casa", 50)
 		
 	}
 	

@@ -5,15 +5,12 @@ programa
 	inclua biblioteca Util--> u
 	
 	cadeia nome
-	
+	inteiro decisao
 	
 	funcao inicio()
 	{
-		criar()
-		historia()
-	}
 
-	funcao criar(){
+ 		//criaçao do personagem
 		escrevaMaquina("Você é um perito criminal cibernético de sucesso.\n", 50)
 		escrevaMaquina("Antes de começar sua história, me responda uma pergunta\n", 50)
 		escrevaMaquina("Qual o seu nome? \n", 50)
@@ -21,9 +18,8 @@ programa
 		escrevaMaquina("Perfeito! Pronto para a sua aventura como o melhor detetive do mundo? (não, você não é o Batman) \n", 50)
 		escrevaMaquina("3... \n2... \n1... \njá! \n", 250)
 		AguardeLimpe(500)
-	}
 
-	funcao historia(){
+		//historia
 
 		escreva(" ░▒▓██████▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓███████▓▒░░▒▓████████▓▒░▒▓███████▓▒░       ░▒▓███████▓▒░░▒▓████████▓▒░▒▓████████▓▒░▒▓████████▓▒░▒▓██████▓▒░▒▓████████▓▒░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓████████▓▒░  \n")
 		escreva("░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░         ░▒▓█▓▒░   ░▒▓█▓▒░     ░▒▓█▓▒░░▒▓█▓▒░ ░▒▓█▓▒░   ░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░         \n")
@@ -34,14 +30,65 @@ programa
 		escreva(" ░▒▓██████▓▒░   ░▒▓█▓▒░   ░▒▓███████▓▒░░▒▓████████▓▒░▒▓█▓▒░░▒▓█▓▒░      ░▒▓███████▓▒░░▒▓████████▓▒░  ░▒▓█▓▒░   ░▒▓████████▓▒░▒▓██████▓▒░  ░▒▓█▓▒░   ░▒▓█▓▒░  ░▒▓██▓▒░  ░▒▓████████▓▒░  \n")
 		AguardeLimpe(3000)
 
-		escrevaMaquina("Era meu aniversário de 5 anos. Era um dia bom, ao menos era o que parecia, \n", 50)
+		escrevaMaquina("\"Era meu aniversário de 5 anos. Era um dia bom, ao menos era o que parecia, \n", 50)
 		escrevaMaquina("mas eu ainda sentia que algo estava errado, e realmente estava. \n", 50)
 		escrevaMaquina("A minha família parecia estar escondendo algo de mim, \n", 50)
-		escrevaMaquina("não estavam me deixando entrar na cozinha, eu achei que era um bolo, mas quando eu entrei... \n\n", 50)
+		escrevaMaquina("não estavam me deixando entrar na cozinha, eu achei que era um bolo, mas quando eu entrei... \"\n\n", 50)
 		escrevaMaquina("***VOCÊ ACORDA***\n\n", 50)
-		escrevaMaquina("Mais uma vez esse pesadelo?  \n", 50)
+		escrevaMaquina("\"Mais uma vez esse pesadelo?\" \n", 50)
 		AguardeLimpe(500)
+
+		//esta escolha pode ou começar o jogo, ou contar mais sobre a historia
+		
 		escrevaMaquina("1- Ir ao trabalho		2- Explorar a casa", 50)
+		leia(decisao)
+		escolha(decisao){
+
+			caso 1:
+				escrevaMaquina("Tem certeza? nojento, mas ok \n", 50)
+				AguardeLimpe(500)
+				
+				escrevaMaquina("*você vai ao trabalho, fedendo, mas vai*", 50)
+				pare
+
+			caso 2:
+				escrevaMaquina("Boa escolha \n", 50)
+				escrevaMaquina("*Você escova os dentes, toma café e toma um banho*\n", 50)
+				escrevaMaquina("1- Ir ao trabalho		2- explorar mais a casa \n", 50)
+				leia(decisao)
+	
+				escolha(decisao){
+
+				caso 1:
+					AguardeLimpe(500)
+					escrevaMaquina("*Você vai ao trabalho* \n", 50)
+					pare
+	
+				caso 2:
+					escrevaMaquina("**Você vê uma foto do seu aniversário de 5 anos** \n", 50)
+					escrevaMaquina("\"Me desculpem... Pai, Mae...\"\n", 50)
+					pare
+
+				caso contrario:
+					escrevaMaquina("vai desde o começo agora", 50)
+					pare
+			
+		}
+
+			caso contrario:
+				escrevaMaquina("vai desde o começo agora", 50)
+				pare
+		
+			
+		}
+
+		//trabalho
+		escrevaMaquina("Katherine(Blue Team): \n", 50)
+		escrevaMaquina("\"Olá " + nome + ", temos um serviço para você\" \n\n", 50)
+		
+		escrevaMaquina(nome + ": \n", 50)
+		escrevaMaquina("\"Qual serviço?\" \n\n", 50)
+		
 		
 	}
 	

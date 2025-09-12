@@ -1,28 +1,68 @@
 programa
 {
+	inclua biblioteca Texto --> t
 	inclua biblioteca Util --> u
-	inclua biblioteca Texto
- --> t
 	
-	
-caracter alfabeto[26] = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'}
+	caracter alfabeto[26] = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'}
 	
 	funcao inicio()
 	{
-		criptografar("amor", 3)
+
+
+		inteiro i = 20
+
+		descriptografar("Hzn crffbn qb gvzr qrir ve, qvfpergnzragr, ngr b ynobengóevb znxre r crtne erpbzcrafn dhr rfgn fboer n zrfn.", i)
+
 	}
 
-	funcao criptografar(cadeia msg, inteiro chave){
+	funcao vazio criptografar(cadeia msg, inteiro chave){
 
 		inteiro numCaracteres = t.numero_caracteres(msg)
+
+		escreva("\nchave: ", chave, "\n")
 
 		para(inteiro i=0; i < numCaracteres; i++){
 			
 			caracter letra = t.obter_caracter(msg, i)
 
-			
-			u.aguarde(500)
+			//percorrer todo o alfabeto e verificar a posicao da letra
+			para(inteiro j=0; j < 26; j++){
 
+				se(letra == alfabeto[j]){
+					inteiro novaPosicao = (j + chave) % 26
+					escreva(alfabeto[novaPosicao])
+					pare
+				}
+
+			}
+			
 		}
+	}
+
+	funcao descriptografar(cadeia msg, inteiro chave){
+		
+		inteiro numCaracteres = t.numero_caracteres(msg)
+
+		escreva("\nchave: ", chave, "\n")
+
+		para(inteiro i=0; i < numCaracteres; i++){
+			
+			caracter letra = t.obter_caracter(msg, i)
+
+			//percorrer todo o alfabeto e verificar a posicao da letra
+			para(inteiro j=0; j < 26; j++){
+
+				se(letra == alfabeto[j]){
+					inteiro novaPosicao = (j - chave) 
+					se(novaPosicao < 0){
+						novaPosicao = novaPosicao + 26
+					}
+					escreva(alfabeto[novaPosicao])
+					pare
+				}
+
+			}
+	}
+	
 	}
 }

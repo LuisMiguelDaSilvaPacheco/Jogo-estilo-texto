@@ -7,9 +7,13 @@ programa
 	cadeia nome
 	inteiro decisao
 	
+	caracter alfabeto[26] = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'}
+	
 	funcao inicio()
 	{
 
+		cadeia senha
+		
  		//criaçao do personagem
 		escrevaMaquina("Você é um perito criminal cibernético de sucesso.\n", 50)
 		escrevaMaquina("Antes de começar sua história, me responda uma pergunta\n", 50)
@@ -38,49 +42,8 @@ programa
 		escrevaMaquina("\"Mais uma vez esse pesadelo?\" \n", 50)
 		AguardeLimpe(500)
 
-		//esta escolha pode ou começar o jogo, ou contar mais sobre a historia
-		
-		escrevaMaquina("1- Ir ao trabalho		2- Explorar a casa", 50)
-		leia(decisao)
-		escolha(decisao){
-
-			caso 1:
-				escrevaMaquina("Tem certeza? nojento, mas ok \n", 50)
-				AguardeLimpe(500)
-				
-				escrevaMaquina("*você vai ao trabalho, fedendo, mas vai*", 50)
-				pare
-
-			caso 2:
-				escrevaMaquina("Boa escolha \n", 50)
-				escrevaMaquina("*Você escova os dentes, toma café e toma um banho*\n", 50)
-				escrevaMaquina("1- Ir ao trabalho		2- explorar mais a casa \n", 50)
-				leia(decisao)
-	
-				escolha(decisao){
-
-				caso 1:
-					AguardeLimpe(500)
-					escrevaMaquina("*Você vai ao trabalho* \n", 50)
-					pare
-	
-				caso 2:
-					escrevaMaquina("**Você vê uma foto do seu aniversário de 5 anos** \n", 50)
-					escrevaMaquina("\"Me desculpem... Pai, Mae...\"\n", 50)
-					pare
-
-				caso contrario:
-					escrevaMaquina("vai desde o começo agora", 50)
-					pare
-			
-		}
-
-			caso contrario:
-				escrevaMaquina("vai desde o começo agora", 50)
-				pare
-		
-			
-		}
+		//uma decisao que pode te ajudar mais para frente
+		acordar()
 
 		//trabalho
 		escrevaMaquina("Katherine(Blue Team): \n", 50)
@@ -88,7 +51,50 @@ programa
 		
 		escrevaMaquina(nome + ": \n", 50)
 		escrevaMaquina("\"Qual serviço?\" \n\n", 50)
+
+		escrevaMaquina("Katherine(Blue Team): \n", 50)
+		escrevaMaquina("\"Precisamos de você para sabermos se as informações do nosso cliente foram clonadas, podemos contar com sua ajuda?\"\n", 50)
 		
+		escrevaMaquina(nome + ": \n", 50)
+		escrevaMaquina("\"Claro que sim, vou terminar ainda hoje!\" \n\n", 50)
+		AguardeLimpe(500)
+		
+		escrevaMaquina("*Você liga seu computador*\n", 50)
+		escrevaMaquina("Senha: ", 50)
+		leia(senha)
+
+		//Senha que foi dada no comeco
+		logico continuar = verdadeiro
+		
+		enquanto(continuar == verdadeiro){
+			
+			se(senha == "Açúcar"){
+				
+				escrevaMaquina("Acesso autorizado", 50)
+				continuar = falso
+				
+			}senao{
+				
+				escrevaMaquina("Acesso negado", 50)
+				
+			}
+		}
+
+		//primeiro trabalho
+		escrevaMaquina("*Computador possivelmente clonado*", 50)
+		
+		escrevaMaquina(nome + ": \n", 50)
+		escrevaMaquina("\"Primeiro eu vou abrir o terminal... E agora?\" \n\n", 50)
+
+		continuar = verdadeiro
+		
+		enquanto(continuar == verdadeiro){
+			
+		escrevaMaquina("1- ls			2- cd / \n", 50)
+		escrevaMaquina("3- access_log		4- help \n", 50)
+		leia(decisao)
+		
+		}
 		
 	}
 	
@@ -104,6 +110,178 @@ programa
 			escreva(t.obter_caracter(texto, i))
 			u.aguarde(velocidade)
 		}
+	}
+
+	funcao vazio criptografar(cadeia msg, inteiro chave){
+
+		inteiro numCaracteres = t.numero_caracteres(msg)
+
+		escreva("\nchave: ", chave, "\n")
+
+		para(inteiro i=0; i < numCaracteres; i++){
+			
+			caracter letra = t.obter_caracter(msg, i)
+
+			se(letra == ' '){
+				
+				escreva( " ")
+				
+			}senao{
+				
+				//percorrer todo o alfabeto e verificar a posicao da letra
+				
+				para(inteiro j=0; j < 26; j++){
+	
+					se(letra == alfabeto[j]){
+						
+						inteiro novaPosicao = (j + chave) % 26
+						
+						escreva(alfabeto[novaPosicao])
+						
+						pare
+
+					}
+				
+				}
+
+			}
+			
+		}
+
+	}
+
+	funcao vazio descriptografar(cadeia msg, inteiro chave){
+
+		inteiro numCaracteres = t.numero_caracteres(msg)
+
+		escreva("\nchave: ", chave, "\n")
+
+		para(inteiro i=0; i < numCaracteres; i++){
+			
+			caracter letra = t.obter_caracter(msg, i)
+			
+			se(letra == ' '){
+				
+				escreva( " ")
+				
+			}senao{
+				
+			//percorrer todo o alfabeto e verificar a posicao da letra
+			
+				para(inteiro j=0; j < 26; j++){
+
+					se(letra == alfabeto[j]){
+						
+						inteiro novaPosicao = j - chave
+						
+						se(novaPosicao < 0){
+							
+							escreva(alfabeto[novaPosicao + 26])
+							
+						}senao{
+							
+							escreva(alfabeto[novaPosicao])
+							
+						}
+					
+					pare
+					}
+
+				}
+			
+			}
+			
+		}
+		
+	}
+	
+	funcao acordar(){
+		
+		//esta escolha pode ou começar o jogo, ou contar mais sobre a historia
+
+		logico continuar = verdadeiro
+		
+		enquanto(continuar == verdadeiro){
+			
+
+			escrevaMaquina("1- Ir ao trabalho		2- Ir ao banheiro", 50)
+			leia(decisao)
+			
+				escolha(decisao){
+
+					caso 1:
+						escrevaMaquina("Tem certeza? nojento, mas ok \n", 50)
+						AguardeLimpe(500)
+					
+						escrevaMaquina("*você vai ao trabalho, fedendo, mas vai*", 50)
+
+						continuar = falso
+						
+						pare
+
+					caso 2:
+						escrevaMaquina("Boa escolha \n", 50)
+						escrevaMaquina("*Você escova os dentes, toma café e toma um banho*\n", 50)
+						escrevaMaquina("1- Ir ao trabalho		2- explorar mais a casa \n", 50)
+						leia(decisao)
+	
+					escolha(decisao){
+	
+						caso 1:
+							AguardeLimpe(500)
+							escrevaMaquina("*Você vai ao trabalho* \n", 50)
+							
+							continuar = falso
+							
+							pare
+	
+						caso 2:
+							escrevaMaquina("**Você vê uma foto do seu aniversário de 5 anos** \n", 50)
+							escrevaMaquina("\"Me desculpem... Pai... Mãe...\"\n", 50)
+							
+							escrevaMaquina("1- Ir ao trabalho		2- explorar mais a casa \n", 50)
+							leia(decisao)
+	
+							escolha(decisao){
+
+								caso 1:
+									AguardeLimpe(500)
+									escrevaMaquina("*Você vai ao trabalho* \n", 50)
+
+									continuar = falso
+									
+									pare
+	
+								caso 2:
+									escrevaMaquina("**Você vê um papel com algo anotado** \n", 50)
+									escrevaMaquina("\"Senha: Açúcar\"\n", 50)
+									AguardeLimpe(500)
+									
+									escrevaMaquina("*Você vai ao trabalho* \n", 50)
+
+									continuar = falso
+									
+									pare
+
+								caso contrario:
+									escrevaMaquina("Informação inválida, recomeçando... \n", 50)
+									pare
+							}
+							
+
+						caso contrario:
+							escrevaMaquina("Informação inválida, recomeçando... \n", 50)
+							pare
+			
+					}
+
+			caso contrario:
+				escrevaMaquina("Informação inválida, recomeçando... \n", 50)
+				pare
+		
+			
+		}
+		
 	}
 	
 }

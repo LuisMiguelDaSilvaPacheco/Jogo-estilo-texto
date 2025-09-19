@@ -1,21 +1,17 @@
 programa
 {
-	inclua biblioteca Texto --> t
 	inclua biblioteca Util --> u
+	inclua biblioteca Texto
+ --> t
 	
-	caracter alfabeto[26] = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'}
+caracter alfabeto[26] = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'}
 	
 	funcao inicio()
 	{
-
-
-		inteiro i = 20
-
-		descriptografar("Hzn crffbn qb gvzr qrir ve, qvfpergnzragr, ngr b ynobengóevb znxre r crtne erpbzcrafn dhr rfgn fboer n zrfn.", i)
-
+		criptografar("beco atras da quinta avenida com a pine street hoje a noite", 3)
 	}
 
-	funcao vazio criptografar(cadeia msg, inteiro chave){
+	funcao criptografar(cadeia msg, inteiro chave){
 
 		inteiro numCaracteres = t.numero_caracteres(msg)
 
@@ -25,22 +21,36 @@ programa
 			
 			caracter letra = t.obter_caracter(msg, i)
 
-			//percorrer todo o alfabeto e verificar a posicao da letra
-			para(inteiro j=0; j < 26; j++){
+			se(letra == ' '){
+				
+				escreva( " ")
+				
+			}senao{
+				
+				//percorrer todo o alfabeto e verificar a posicao da letra
+				
+				para(inteiro j=0; j < 26; j++){
+	
+					se(letra == alfabeto[j]){
+						
+						inteiro novaPosicao = (j + chave) % 26
+						
+						escreva(alfabeto[novaPosicao])
+						
+						pare
 
-				se(letra == alfabeto[j]){
-					inteiro novaPosicao = (j + chave) % 26
-					escreva(alfabeto[novaPosicao])
-					pare
+					}
+				
 				}
 
 			}
 			
 		}
+
 	}
 
 	funcao descriptografar(cadeia msg, inteiro chave){
-		
+
 		inteiro numCaracteres = t.numero_caracteres(msg)
 
 		escreva("\nchave: ", chave, "\n")
@@ -48,21 +58,39 @@ programa
 		para(inteiro i=0; i < numCaracteres; i++){
 			
 			caracter letra = t.obter_caracter(msg, i)
-
+			
+			se(letra == ' '){
+				
+				escreva( " ")
+				
+			}senao{
+				
 			//percorrer todo o alfabeto e verificar a posicao da letra
-			para(inteiro j=0; j < 26; j++){
+			
+				para(inteiro j=0; j < 26; j++){
 
-				se(letra == alfabeto[j]){
-					inteiro novaPosicao = (j - chave) 
-					se(novaPosicao < 0){
-						novaPosicao = novaPosicao + 26
-					}
-					escreva(alfabeto[novaPosicao])
+					se(letra == alfabeto[j]){
+						
+						inteiro novaPosicao = j - chave
+						
+						se(novaPosicao < 0){
+							
+							escreva(alfabeto[novaPosicao + 26])
+							
+						}senao{
+							
+							escreva(alfabeto[novaPosicao])
+							
+						}
+					
 					pare
-				}
+					}
 
+				}
+			
 			}
-	}
-	
+			
+		}
+		
 	}
 }
